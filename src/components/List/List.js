@@ -3,7 +3,7 @@ import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
 import Column from '../Column/Column.js';
-import columnStyle from '../Column/Column.scss'
+
 
 class List extends React.Component {
   static propTypes = {
@@ -24,10 +24,10 @@ class List extends React.Component {
         <div className={styles.description}>
             {this.props.children}
         </div>
-        <div className={columnStyle}>
-            <Column col1Title={'HOME do it!'} />
-            <Column col2Title={'WORK do it!'} />
-            <Column col3Title={'AMBITION do it!'} />
+        <div className={styles.columns}>
+            <Column col1Title='HOME do it!' />
+            <Column col2Title='WORK do it!' />
+            <Column col3Title='AMBITION do it!' />
         </div>
       </section>
     )

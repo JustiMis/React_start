@@ -12,7 +12,7 @@ class App extends React.Component {
         <h2 className={styles.subtitle}>Hello world!</h2>
         <List title={['Do it! Do it ', <sup key='1'>better!</sup>]}
               imgSrc="http://uploads.kodilla.com/bootcamp/fer/11.react/space.png" />
-           
+        
         
         
       </main>

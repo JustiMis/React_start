@@ -14,9 +14,9 @@ class Column extends React.Component {
     cards: this.props.cards || [],
   }
     static propTypes = {
-        title: PropTypes.string.isRequired,
-        cards: PropTypes.array,
-        Icon: PropTypes.node,
+      title: PropTypes.string.isRequired,
+      cards: PropTypes.array,
+      name: PropTypes.node,
     }
 
     addCard(title){
@@ -27,31 +27,30 @@ class Column extends React.Component {
             {
               key: state.cards.length ? state.cards[state.cards.length-1].key+1 : 0,
               title,
-              icon: 'list-alt',
-              cards: []
-            }
-          ]
+              icon: 'name',
+              cards: [],
+            },
+          ],
         }
       ));
     }
 
-  render() {
-    return (
-      <section className={styles.component}>
-        <h3 className={styles.title}>{this.props.title}<span className={styles.icon}>{Icon}</span></h3>
+    render() {
+      return (
+        <section className={styles.component}>
+          <h3 className={styles.title}>{this.props.title}<span className={Icon}></span></h3>
 
-        <div className={styles.component}>{this.state.cards.map(({key, ...cardsProps}) => (
-          <Card key={key} {...cardsProps} />
+          <div className={styles.icon}>{this.state.cards.map(({key, ...cardsProps}) => (
+            <Card key={key} {...cardsProps} />
           ))} 
-        </div>
+          </div>
 
-        <div className={styles.creator}>
-          <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
-        </div>
-      </section>
-      
-    )
-  }
+          <div className={styles.creator}>
+            <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
+          </div>
+        </section>
+        );
+    }
 }
 
 export default Column;

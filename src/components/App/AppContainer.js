@@ -4,7 +4,7 @@ import App from './App';
 const mapStateToProps = state => ({
   title: state.app.title,
   subtitle: state.app.subtitle,
-  list: state.lists,
+  lists: state.lists,
 });
 
 export default connect(mapStateToProps)(App);

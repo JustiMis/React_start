@@ -1,9 +1,14 @@
 import React from 'react';
 import styles from './Card.scss';
 import PropTypes from 'prop-types';
+import { settings } from '../../data/dataStore.js';
 
 
 class Card extends React.Component {
+    static defaultProps = {
+    icon: settings.defaultCardIcon, //czy card ma ikone?
+    }
+  
     static propTypes = {
       title: PropTypes.string.isRequired,
     }
